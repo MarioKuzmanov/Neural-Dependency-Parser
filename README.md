@@ -54,5 +54,14 @@ Example:
 
 ![usage_example](usage/usage.png)
 
+Example parses:
+
+|            Gold Parse            |              Predicted Parse              | 
+|:--------------------------------:|:-----------------------------------------:| 
+ ![gold_parse](usage/ex_gold.png) | ![predict_parse](usage/ex_prediction.png) 
+
+In this test sentence, all the words have been assigned their correct head (**100% UAS**) and their correct label (*
+*100% LAS**)
+
 **NB: The model can be provided in case of a personal request.
 email: googlemario@abv.bg**

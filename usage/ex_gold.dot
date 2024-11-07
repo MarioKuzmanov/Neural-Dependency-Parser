@@ -1,0 +1,9 @@
+digraph {
+	<ROOT> -> "Писал" [label=root]
+	"Писал" -> "е" [label=aux]
+	"Писал" -> "повести" [label=obj]
+	"Писал" -> "." [label=punct]
+	"повести" -> "доста" [label=advmod]
+	"повести" -> "драми" [label=conj]
+	"драми" -> "и" [label=cc]
+}

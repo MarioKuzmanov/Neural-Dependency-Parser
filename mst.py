@@ -24,6 +24,7 @@ class DepGraph:
                               i, 1.0, sent[i].deprel)
 
     def add_edge(self, parent, child, weight=0.0, label="_"):
+        parent, child = int(parent), int(child)
         self.M[parent, child] = weight
         self.deprels[child] = label
         self.nodes[child].head = parent
@@ -90,7 +91,7 @@ class DepGraph:
         """Return a GraphViz Digraph - can be useful for debugging."""
         dg = graphviz.Digraph()  # graph_attr={'rankdir': 'LR'})
         for head, dep, weight, deprel in self.edge_list():
-            dg.edge(head.form, dep.form, label=f"{deprel}({weight:0.2f})")
+            dg.edge(head.form, dep.form, label=f"{deprel}")
         return dg
 
 
@@ -141,6 +142,7 @@ def mst_parse(sent, id2deprel, deprel2id, score_fn):
         cycle = list(mst.find_cycle())
 
     # STEP 4: Resulting graph is the MST
+
     return mst
 
 
@@ -168,6 +170,7 @@ def evaluate_model(test_file):
     uas_scorer, las_scorer = 0, 0
     for sent in read_conllu(test_file):
         mst_scorer = mst_parse(sent, neural_scorer.id2deprel, neural_scorer.deprel2id, score_fn=neural_scorer.scorer)
+
         uas_sent, las_sent = evaluate(sent, mst_scorer.nodes)
         uas_scorer += uas_sent
         las_scorer += las_sent
