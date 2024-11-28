@@ -17,6 +17,7 @@ T4 GPU.
 2. **LAS = 0.77**
 
 <h2>The Model</h2>
+
 The following section is meant as a quick overview of the used architecture. At first, pretrained <em>Word2Vec</em>
 embeddings for words and tags are built. These are to freeze the initial embedding layer of the network and as a couple
 of papers mention, it often
@@ -60,8 +61,7 @@ Example parses:
 |:--------------------------------:|:-----------------------------------------:| 
  ![gold_parse](usage/ex_gold.png) | ![predict_parse](usage/ex_prediction.png) 
 
-In this test sentence, all the words have been assigned their correct head (**100% UAS**) and their correct label (*
-*100% LAS**)
+In this test sentence, all the words have been assigned their correct head (**100% UAS**) and their correct label (**100% LAS**)
 
 **NB: The model can be provided in case of a personal request.
 email: googlemario@abv.bg**
